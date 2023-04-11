@@ -1,15 +1,14 @@
 import { memo } from 'react';
+import { Tier } from '../types/tier.type';
 import { formalStringList } from '../utils/string.utils';
 import { TierSquad } from './TierSquad';
 
-export interface TierProps {
-  tier: number;
-  label: string;
-  color: string;
+export interface TierItemProps {
+  data: Tier;
   content: string[];
 }
 
-const Tier: React.FC<TierProps> = ({ tier, label, color, content }) => {
+const TierItem: React.FC<TierItemProps> = ({ data: { label, color }, content }) => {
 
   return (
     <div
@@ -27,4 +26,4 @@ const Tier: React.FC<TierProps> = ({ tier, label, color, content }) => {
   );
 };
 
-export default memo(Tier);
+export default memo(TierItem);
