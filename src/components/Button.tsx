@@ -4,12 +4,12 @@ import clsx from 'clsx';
 import { Loader } from './Loader';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: 'main' | 'outlined';
+  variant?: 'main' | 'outlined';
   isLoading?: boolean;
   children: ReactNode;
 }
 
-export const Button: React.FC<ButtonProps> = ({ variant = 'outlined', isLoading = false, disabled = false, children, ...props }) => {
+export const Button: React.FC<ButtonProps> = ({ variant = 'main', isLoading = false, disabled = false, children, ...props }) => {
 
   return (
     <button
