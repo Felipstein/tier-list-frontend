@@ -1,8 +1,12 @@
+import { TierList } from './components/TierList';
+
 import './styles/global.css';
 
 export const App: React.FC = () => {
 
   return (
-    <h1>App</h1>
+    <div className='h-screen bg-zinc-900 text-white'>
+      <TierList />
+    </div>
   );
 };
