@@ -1,18 +1,19 @@
-import { ReactNode } from 'react';
+import { memo } from 'react';
+import { formalStringList } from '../utils/string.utils';
 import { TierSquad } from './TierSquad';
 
-interface TierProps {
+export interface TierProps {
   tier: number;
   label: string;
   color: string;
-  children: ReactNode;
+  content: string[];
 }
 
-export const Tier: React.FC<TierProps> = ({ tier, label, color, children }) => {
+const Tier: React.FC<TierProps> = ({ tier, label, color, content }) => {
 
   return (
     <div
-      className='flex gap-4 bg-zinc-800 rounded shadow-md p-2 items-center'
+      className='flex gap-4 bg-zinc-800 rounded shadow-md p-2 items-center transition-transform hover:scale-105'
     >
       <TierSquad
         label={label}
@@ -20,8 +21,10 @@ export const Tier: React.FC<TierProps> = ({ tier, label, color, children }) => {
       />
 
       <div className='flex-1'>
-        {children}
+        {formalStringList(content)}
       </div>
     </div>
   );
 };
+
+export default memo(Tier);
