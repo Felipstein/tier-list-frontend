@@ -1,3 +1,4 @@
+import { PlusIcon } from '../icons/PlusIcon';
 import { Button } from './Button';
 import { Logo } from './Logo';
 
@@ -9,7 +10,7 @@ export const Header: React.FC = () => {
         <Logo />
 
         <Button>
-          Botão
+          <PlusIcon size={20} />
         </Button>
       </main>
     </header>
