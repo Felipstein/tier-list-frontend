@@ -51,7 +51,7 @@ export const TierList: React.FC = () => {
   const tiersSorted = useMemo(() => tiers.sort((next, current) => next.tier - current.tier), [tiers]);
 
   return (
-    <main className='w-10/12 max-w-7xl m-auto py-12 flex flex-col gap-2'>
+    <main className='py-12 flex flex-col gap-2'>
       {tiersSorted.map(({ tier, label, content, color }) => (
         <Tier
           key={tier}
